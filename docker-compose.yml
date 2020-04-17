@@ -11,7 +11,7 @@ services:
     working_dir: /app
     command: bash -c "bundle install && bundle exec ruby app.rb"
   production:
-    image: kshcyber/ruby-app:${BUILD_NUMBER}
+    image: kshcyber/ruby-app:latest
     ports:
       - 4567:4567
     
