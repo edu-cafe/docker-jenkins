@@ -14,4 +14,3 @@ services:
     image: kshcyber/ruby-app:${BUILD_NUMBER}
     ports:
       - 4567:4567
-    
