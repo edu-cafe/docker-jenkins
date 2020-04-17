@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    image: kshcyber/ruby-app
+  unit:
+    image: ruby:2.3
+    volumes:
+      - ${WORKSPACE}/${JOB_NAME}:/app
+    working_dir: /app
+    command: bash -c "bundle install && bundle exec ruby app.rb"
+  production:
+    image: kshcyber/ruby-app:${BUILD_NUMBER}
+    ports:
+      - 4567:4567
+    
